@@ -1,1 +1,299 @@
-hello, i am riju rana
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riju | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#e5e7eb;
+    scroll-behavior:smooth;
+}
+
+/* SCROLL PROGRESS BAR */
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    width:0%;
+    background:linear-gradient(90deg,#38bdf8,#6366f1);
+    z-index:2000;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:4px;
+    left:0;
+    width:100%;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(15,23,42,0.6);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+    transition:all 0.4s ease;
+}
+
+nav.scrolled{
+    background:rgba(2,6,23,0.9);
+}
+
+nav.hide{
+    transform:translateY(-120%);
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:bold;
+    color:#60a5fa;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    position:relative;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#e5e7eb;
+    font-size:1rem;
+}
+
+/* ANIMATED UNDERLINE */
+#cursor{
+    position:absolute;
+    bottom:-6px;
+    height:3px;
+    background:#60a5fa;
+    border-radius:10px;
+    transition:all 0.3s ease;
+}
+
+/* HAMBURGER */
+.menu{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+.menu span{
+    width:25px;
+    height:3px;
+    background:#e5e7eb;
+    margin:4px 0;
+}
+
+/* HERO */
+header{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(120deg,#2563eb,#1e40af);
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+}
+header span{
+    color:#fde68a;
+}
+
+/* SECTIONS */
+section{
+    min-height:100vh;
+    padding:120px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+h2{
+    font-size:2.2rem;
+    color:#60a5fa;
+    margin-bottom:20px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+/* SECTION DOTS */
+#dots{
+    position:fixed;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    z-index:999;
+}
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#475569;
+    cursor:pointer;
+    transition:all 0.3s;
+}
+.dot.active{
+    background:#60a5fa;
+    transform:scale(1.4);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav ul{
+        position:absolute;
+        right:0;
+        top:65px;
+        background:#020617;
+        flex-direction:column;
+        padding:20px;
+        transform:translateX(100%);
+        transition:transform 0.3s;
+    }
+    nav ul.show{
+        transform:translateX(0);
+    }
+    .menu{
+        display:flex;
+    }
+    #dots{
+        display:none;
+    }
+}
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="navbar">
+    <div class="logo">Riju</div>
+
+    <ul id="navLinks">
+        <div id="cursor"></div>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<div id="dots">
+    <div class="dot" onclick="go('#home')"></div>
+    <div class="dot" onclick="go('#about')"></div>
+    <div class="dot" onclick="go('#skills')"></div>
+    <div class="dot" onclick="go('#projects')"></div>
+    <div class="dot" onclick="go('#contact')"></div>
+</div>
+
+<header id="home">
+    <h1>Hi, I'm <span>Riju</span></h1>
+    <p>Cyber Security | Full-Stack Developer</p>
+</header>
+
+<section id="about">
+    <h2>About</h2>
+    <div class="card">Passionate CSE student building secure web apps.</div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="card">HTML • CSS • JS • React • PHP • MySQL • Git</div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="card">Smart Student Helper</div>
+    <div class="card">Portfolio Website</div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">Email • GitHub • LinkedIn</div>
+</section>
+
+<footer>© 2026 Riju</footer>
+
+<script>
+/* MENU */
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+/* UNDERLINE CURSOR */
+const cursor=document.getElementById("cursor");
+document.querySelectorAll("nav a").forEach(link=>{
+    link.addEventListener("mouseenter",e=>{
+        cursor.style.width=e.target.offsetWidth+"px";
+        cursor.style.left=e.target.offsetLeft+"px";
+    });
+});
+
+/* SCROLL EFFECTS */
+let lastScroll=0;
+const navbar=document.getElementById("navbar");
+const dots=document.querySelectorAll(".dot");
+const sections=document.querySelectorAll("header,section");
+
+window.addEventListener("scroll",()=>{
+    const scroll=window.scrollY;
+
+    /* progress */
+    document.getElementById("progress").style.width=
+        (scroll/(document.body.scrollHeight-innerHeight))*100+"%";
+
+    /* hide navbar */
+    scroll>lastScroll ? navbar.classList.add("hide") : navbar.classList.remove("hide");
+    navbar.classList.toggle("scrolled",scroll>50);
+    lastScroll=scroll;
+
+    /* active dot */
+    sections.forEach((sec,i)=>{
+        if(scroll>=sec.offsetTop-150){
+            dots.forEach(d=>d.classList.remove("active"));
+            if(dots[i]) dots[i].classList.add("active");
+        }
+    });
+});
+
+/* DOT NAV */
+function go(id){
+    document.querySelector(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
+
