@@ -1,1 +1,213 @@
-hello, i am riju rana
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riju | Resume</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+    padding:30px;
+}
+
+.resume{
+    max-width:900px;
+    margin:auto;
+    background:#ffffff;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    border-bottom:2px solid #2563eb;
+    padding-bottom:20px;
+}
+
+.header h1{
+    font-size:2.5rem;
+    color:#1e3a8a;
+}
+
+.header p{
+    margin-top:8px;
+    font-size:1.1rem;
+    color:#475569;
+}
+
+.contact{
+    margin-top:10px;
+    font-size:0.95rem;
+}
+
+.contact span{
+    margin:0 10px;
+}
+
+/* SECTION */
+.section{
+    margin-top:30px;
+}
+
+.section h2{
+    font-size:1.4rem;
+    color:#2563eb;
+    border-bottom:1px solid #cbd5f5;
+    padding-bottom:6px;
+    margin-bottom:15px;
+}
+
+.section p, li{
+    font-size:1rem;
+    color:#334155;
+    line-height:1.6;
+}
+
+ul{
+    margin-left:20px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:30px;
+    font-size:0.9rem;
+    color:#64748b;
+}
+
+/* PRINT */
+@media print{
+    body{
+        background:#ffffff;
+        padding:0;
+    }
+    .resume{
+        box-shadow:none;
+        border-radius:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="resume">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Riju</h1>
+        <p>Computer Science Engineering (Cyber Security) Student</p>
+        <div class="contact">
+            <span>Email: your-email@example.com</span> |
+            <span>GitHub: github.com/yourusername</span> |
+            <span>LinkedIn: linkedin.com/in/yourprofile</span>
+        </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>
+            Motivated Computer Science Engineering student specializing in
+            <strong>Cyber Security</strong> with strong foundations in web development.
+            Passionate about building secure, scalable applications and continuously
+            learning modern technologies.
+        </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="grid">
+            <ul>
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>React.js (Basics)</li>
+                <li>PHP (CodeIgniter)</li>
+                <li>MySQL</li>
+            </ul>
+            <ul>
+                <li>Cyber Security Fundamentals</li>
+                <li>Git & GitHub</li>
+                <li>REST APIs (Basics)</li>
+                <li>Linux Basics</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h2>Education</h2>
+        <p><strong>B.Tech in Computer Science Engineering (Cyber Security)</strong></p>
+        <p>Meghnad Saha Institute of Technology</p>
+        <p>2024 – 2028</p>
+
+        <br>
+
+        <p><strong>Higher Secondary (WBCHSE)</strong></p>
+        <p>Chandrakona Jirat High School</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>Smart Student Helper</strong><br>
+                Web application for managing tasks, notes, attendance, and schedules
+                using React, PHP, and MySQL.
+            </li>
+            <li>
+                <strong>Personal Portfolio Website</strong><br>
+                Fully responsive portfolio built with HTML, CSS, and JavaScript
+                featuring animated navigation and UI effects.
+            </li>
+        </ul>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+        <h2>Certifications & Learning</h2>
+        <ul>
+            <li>Cyber Security Fundamentals (Online Course)</li>
+            <li>Web Development Bootcamp</li>
+            <li>Git & GitHub Essentials</li>
+        </ul>
+    </div>
+
+    <!-- STRENGTHS -->
+    <div class="section">
+        <h2>Strengths</h2>
+        <ul>
+            <li>Quick learner and problem solver</li>
+            <li>Strong analytical mindset</li>
+            <li>Team collaboration and communication</li>
+            <li>Security-focused development approach</li>
+        </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 Riju
+    </div>
+
+</div>
+
+</body>
+</html>
+
